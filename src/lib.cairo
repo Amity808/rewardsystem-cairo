@@ -54,11 +54,17 @@ mod RewardContract {
     #[derive(Drop, starknet::Event)]
     pub enum Event {
         RewardEvent: RewardEvent,
+        RedemPoint: RedemPoint,
     }
 
     #[derive(Drop, starknet::Event)]
     pub struct RewardEvent {
         pub reward: felt252,
+    }
+    
+    #[derive(Drop, starknet::Event)]
+    pub struct RedemPoint {
+        pub pointredem: felt252,
     }
 
     #[abi(embed_v0)]
@@ -75,6 +81,7 @@ mod RewardContract {
             assert(self.contract_owner.read() == owner, 'Contract address not found');
             assert(pointredem != 0, 'Amount cannot be 0');
             self.rewards.write(self.rewards.read() + pointredem);
+            self.emit( RedemPoint { pointredem })
         }
 
         fn getRewardBalance(self: @ContractState) -> felt252 {
