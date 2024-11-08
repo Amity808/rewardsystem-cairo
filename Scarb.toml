@@ -47,3 +47,6 @@ test = "snforge test"
 
 # [features]                                                 # Used for conditional compilation
 # enable_for_tests = []                                      # Feature name and list of other features that should be enabled with it
+
+
+#  "contract_address": "0xe9c3997ba60c24f5d016a574bf0785e928ae2344e5889aa5905c733ae183e2" 

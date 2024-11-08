@@ -42,7 +42,7 @@ pub trait IReward<TContractState> {
 mod RewardContract {
 
     use starknet::ContractAddress;
-    use starknet::get_caller_address;
+    // use starknet::get_caller_address;
 
     #[storage]
     struct Storage {
